@@ -1,5 +1,16 @@
+@keyframes fadeInUP {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 html, body {
     overflow-x: hidden; /* Prevent horizontal overflow on the entire page */
+    animation: fadeInUP 1s ease-in-out;
 }
 h1 {
     text-align: center;
