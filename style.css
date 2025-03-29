@@ -29,8 +29,9 @@ h3 {
 }
 ul {
     animation: fadeInUP 1s ease-in-out;
+    list-style-position: inside; /* Place bullet points inside the list item */
     list-style-type: disc; /* Default bullet points */
-    margin: 20px;
+    margin: 20px auto;
     padding-left: 40px; /* Indent the list */
 }
 
