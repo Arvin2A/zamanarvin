@@ -23,3 +23,32 @@ function openTab(evt, tabName) {
         evt.currentTarget.className += " active";
     }
 }
+function enableDarkMode() {
+    document.documentElement.classList.add("dark-mode");
+    document.body.classList.add("dark-mode"); // Ensure body also has the dark mode class
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    document.documentElement.style.backgroundColor = "#000000"; // Dark background
+    document.body.style.backgroundColor = "#000000";
+    if (darkModeToggle) {
+        darkModeToggle.textContent = "☀️"; // Change to sun icon for light mode
+    }
+}
+
+function disableDarkMode() {
+    document.documentElement.classList.remove("dark-mode"); // Remove from root element
+    document.body.classList.remove("dark-mode");
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    document.documentElement.style.backgroundColor = "#ffffff"; // Reset to default background
+    document.body.style.backgroundColor = "#ffffff"; // Reset body background
+    if (darkModeToggle) {
+        darkModeToggle.textContent = "🌙"; // Change to moon icon for dark mode
+    }
+}
+function toggleDarkMode() {
+    const html = document.documentElement;
+    if (html.classList.contains("dark-mode")) {
+        disableDarkMode();
+    } else {
+        enableDarkMode();
+    }
+}
