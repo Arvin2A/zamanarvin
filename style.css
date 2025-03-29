@@ -10,16 +10,36 @@
 }
 html, body {
     overflow-x: hidden; /* Prevent horizontal overflow on the entire page */
+    font-family: 'Comic Neue', 'sans-serif';
+}
+p {
     animation: fadeInUP 1s ease-in-out;
+    font-size: 20px;
+    text-align: center;
 }
 h1 {
+    animation: fadeInUP 1s ease-in-out;
     text-align: center;
     margin-top: 50px;
 }
 h3 {
+    animation: fadeInUP 1s ease-in-out;
     text-align: center;
+    font-size: 50px;
+}
+ul {
+    animation: fadeInUP 1s ease-in-out;
+    list-style-type: disc; /* Default bullet points */
+    margin: 20px;
+    padding-left: 40px; /* Indent the list */
 }
 
+li {
+    animation: fadeInUP 1s ease-in-out;
+    font-size: 18px;
+    line-height: 1.6; /* Add spacing between list items */
+    text-align: center;
+}
 .tab {
     overflow: hidden;
     display: flex;
@@ -39,6 +59,8 @@ h3 {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    font-size: 20px;
+    font-family: 'Comic Neue', 'sans-serif';
 }
 
 .tab button:hover {
@@ -52,7 +74,9 @@ h3 {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #000000;
+    top: 50px;
+    width: 100%;
+    height: calc(100% - 50px);
     border-top: none;
     margin-top: 50px; /* Adjust this value to match the height of your tab buttons */
     /*width: calc(100vw + 20%);*/

@@ -4,28 +4,55 @@
 <head>
     <title>Welcome</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body onload="openTab(event, 'About Me')">
     <div class="tab">
         <button class="tablinks active" onclick="openTab(event, 'About Me')">About Me</button>
+        <button class="tablinks" onclick="openTab(event, 'Q&A')">Q&A</button>
         <button class="tablinks" onclick="openTab(event, 'Options')">Options</button>
         <button class="tablinks" onclick="openTab(event, 'Other')">Other</button>
+
     </div>
 
     <div id="About Me" class="tabcontent active">
         <h3>About Me</h3>
-        <p>Content for Tab 1.</p>
+        <p>Hi my name iz ARFEINNNNN and I really want to teach programming to people who want to know about it!. 
+            However, I am free to teach to people who want to get into the basics.
+            I have mastered Python (2 years of experience) and Roblox LUAU programming (4 years of experience) and I am able to teach those aswell. 
+            For roblox LUAU programming, I am also able to teach you how to design models using Blender.
+            I am also able to teach ONLY BASICS for you about other topics like 3D printing and modeling with Fusion 360.
+            Classes are also meant to be with other people so that no one is feeling bored or lonely.
+            As of now, my knowledge on packages are limited so don't expect me to know everything.
+            The classes are designed for people who are bored of block-based coding and want a tougher challenge, which is a major problem for some people.
+        </p>
     </div>
 
     <div id="Options" class="tabcontent">
         <h3>Options</h3>
         <p>Content for Tab 2.</p>
     </div>
-
+    <div id="Q&A" class="tabcontent">
+        <h3>Questions</h3>
+        <p>Q: Are classes 1 to 1?<br>
+            A: No, classes are meant to be with other people so that no one is feeling bored or lonely.<br>
+            Q: What is the age limit?<br>
+            A: The age limit is 10 to 15 years old.<br>
+            Q: What is the price?<br>
+            A: The price is $10 per hour.
+            Q: What other languages will be taught soon?<br>
+            A: I plan on teaching Java and Kotlin soon.
+        </p>
+    </div>
     <div id="Other" class="tabcontent">
         <h3>Other</h3>
-        <p>Content for Tab 3.</p>
+        <ul>
+            <li>Python Experience: 2 years</li>
+            <li>Roblox Developing experience: 4 years</li>
+            <li>Python Packages to be taught: PyQT, OpenCV, Tkinter, (Built-In Modules: os, tlist of most used built-in no installation libraries pythonime, json, math, sys)</li>
+            <li>Basic Git knowledge</li>
+        </ul>
     </div>
 
     <script src="script.js"></script>

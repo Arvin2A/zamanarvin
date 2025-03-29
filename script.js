@@ -11,6 +11,14 @@ function openTab(evt, tabName) {
     }
     document.getElementById(tabName).style.display = "block";
     document.getElementById(tabName).classList.add("active");
+    const activeTab = document.getElementById(tabName);
+    if (activeTab) {
+        const computedStyle = window.getComputedStyle(activeTab);
+        if (computedStyle.animationName !== "none") {
+            activeTab.style.animation = "fadeInUP 1s ease-in-out"; // Apply animation
+        }
+    }
+
     if (evt) {
         evt.currentTarget.className += " active";
     }
