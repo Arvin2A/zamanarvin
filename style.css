@@ -25,15 +25,19 @@
     --tab-background: #ffffff;
     --tab-border: #9a9a9a;
     --tab-active: #a2a2a2;
+    --payment-color: #ffffff;
+    --payment-border: #000000; /* Background color for payment buttons */
+ /* Border color for payment buttons */
 }
-body.dark-mode {
+body.dark-mode, html.dark-mode {
     --question-img: url(Images/Tabcontent/questions_dark-mode.png); /* Light background color for questions in dark mode */
     --background-color: #000000; /* Dark background color */
     --text-color: #ffffff; /* Light text color */
     --tab-background: #333333; /* Darker tab background */
     --tab-border: #555555; /* Darker border for tabs */
     --tab-active: #666666; /* Active tab color */
-
+    --payment-color: #000000;
+    --payment-border: #ffffff;
 }
 .dark-mode-toggle {
     position: fixed;
@@ -174,4 +178,33 @@ li {
 
 .tabcontent.active {
     display: block;
+}
+.grid-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid; /* Enable grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive columns */
+    gap: 50px; /* Space between grid items */
+    padding: 20px; /* Add padding around the grid */
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    background-color: var(--background-color); /* Match the background color */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Style for payment buttons */
+.payment-button {
+    background-color: var(--payment-color); /* Button background */
+    color: var(--text-color); /* Button text color */
+    border: 2px solid var(--payment-border); /* Button border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Button padding */
+    font-family: 'Comic Neue', 'sans-serif'; /* Font family for the button text */
+    font-size: 16px; /* Button font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+.payment-button:hover {
+    background-color: var(--tab-active); /* Change background on hover */
+    color: var(--text-color); /* Change text color on hover */
 }
