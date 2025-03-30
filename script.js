@@ -64,8 +64,10 @@ function toggleDarkMode() {
     const html = document.documentElement;
     if (html.classList.contains("dark-mode")) {
         disableDarkMode();
+        saveModeToLocalStorage(false);
     } else {
         enableDarkMode();
+        saveModeToLocalStorage(true)
     }
 }
 function saveModeToLocalStorage(darkModeEnabled) {
