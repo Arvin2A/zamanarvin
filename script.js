@@ -23,6 +23,22 @@ function openTab(evt, tabName) {
         evt.currentTarget.className += " active";
     }
 }
+function handleTabNavigation(event) {
+    const tabs = document.getElementsByClassName("tablinks"); // Get all tab buttons
+    const activeTab = document.querySelector(".tablinks.active"); // Find the currently active tab
+    let currentIndex = Array.from(tabs).indexOf(activeTab); // Get the index of the active tab
+
+    if (event.key === "ArrowRight") {
+        // Move to the next tab
+        const nextIndex = (currentIndex + 1) % tabs.length; // Wrap around to the first tab
+        tabs[nextIndex].click(); // Simulate a click on the next tab
+    } else if (event.key === "ArrowLeft") {
+        // Move to the previous tab
+        const prevIndex = (currentIndex - 1 + tabs.length) % tabs.length; // Wrap around to the last tab
+        tabs[prevIndex].click(); // Simulate a click on the previous tab
+    }
+}
+document.addEventListener("keydown", handleTabNavigation);
 function enableDarkMode() {
     document.documentElement.classList.add("dark-mode");
     document.body.classList.add("dark-mode"); // Ensure body also has the dark mode class
@@ -52,3 +68,19 @@ function toggleDarkMode() {
         enableDarkMode();
     }
 }
+function saveModeToLocalStorage(darkModeEnabled) {
+    localStorage.setItem("dark_mode", darkModeEnabled);
+}
+
+// Load mode from localStorage
+function loadModeFromLocalStorage() {
+    const darkMode = localStorage.getItem("dark_mode") === "true";
+    if (darkMode) {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+}
+
+// Call this on page load
+loadModeFromLocalStorage();
