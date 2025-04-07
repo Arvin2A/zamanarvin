@@ -86,3 +86,48 @@ function loadModeFromLocalStorage() {
 
 // Call this on page load
 loadModeFromLocalStorage();
+
+//----SWIPE GESTURE---
+function handleSwipeRight() {
+    // Handle swipe right action
+    var tabs = document.getElementsByClassName("tablinks");
+    var activeTab = document.querySelector(".tablinks.active");
+    var currentIndex = Array.from(tabs).indexOf(activeTab);
+    var nextIndex = (currentIndex + 1) % tabs.length; // Wrap around to the first tab
+    tabs[nextIndex].click(); // Simulate a click on the next tab
+}
+function handleSwipeLeft() {
+    // Handle swipe left action
+    var tabs = document.getElementsByClassName("tablinks");
+    var activeTab = document.querySelector(".tablinks.active");
+    var currentIndex = Array.from(tabs).indexOf(activeTab);
+    var prevIndex = (currentIndex - 1 + tabs.length) % tabs.length; // Wrap around to the last tab
+    tabs[prevIndex].click(); // Simulate a click on the previous tab
+}
+let startX, startY;
+
+document.addEventListener('touchstart', (e) => {
+  console.log("Touch Start");
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+});
+
+document.addEventListener('touchend', (e) => {
+  console.log("Touch End");
+  const endX = e.changedTouches[0].clientX;
+  const endY = e.changedTouches[0].clientY;
+  const deltaX = endX - startX;
+  const deltaY = endY - startY;
+  const swipeThreshold = 50;
+  // Check if it's a swipe
+  if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
+    // Horizontal swipe
+    if (deltaX > 0) {
+      console.log('Swipe Right');
+      handleSwipeRight(); // Call a function to handle right swipe
+    } else {
+      console.log('Swipe Left');
+      handleSwipeLeft(); // Call a function to handle left swipe
+    }
+  }
+});
