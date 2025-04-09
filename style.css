@@ -65,6 +65,7 @@ html, body {
     color : var(--text-color); /* Default text color */
 }
 p {
+    font-size: clamp(1rem, 2.5vw, 2rem);
     animation: fadeInUP 1s ease-in-out;
     font-size: 30px;
     text-align: center;
@@ -78,6 +79,20 @@ h3 {
     animation: fadeInUP 1s ease-in-out;
     text-align: center;
     font-size: 50px;
+}
+ul {
+    animation: fadeInUP 1s ease-in-out;
+    list-style-position: inside; /* Place bullet points inside the list item */
+    list-style-type: disc; /* Default bullet points */
+    margin: 20px auto;
+    padding-left: 40px; /* Indent the list */
+}
+
+li {
+    animation: fadeInUP 1s ease-in-out;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    line-height: 1.6; /* Add spacing between list items */
+    text-align: center;
 }
 #Register {
     position: absolute;
@@ -98,52 +113,7 @@ h3 {
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease; /* Smooth hover effect */
 }
-#Register:hover {
-    background-color: rgb(0, 200, 0); /* Darker green on hover */
-    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6); /* Glow effect */
-}
-ul {
-    animation: fadeInUP 1s ease-in-out;
-    list-style-position: inside; /* Place bullet points inside the list item */
-    list-style-type: disc; /* Default bullet points */
-    margin: 20px auto;
-    padding-left: 40px; /* Indent the list */
-}
 
-li {
-    animation: fadeInUP 1s ease-in-out;
-    font-size: 22.5px;
-    line-height: 1.6; /* Add spacing between list items */
-    text-align: center;
-}
-#About\ Me {
-    background-color: var(--background-color);
-    /*background-image: var(--question-img); */
-    background-size: 100%, 100vh; 
-    background-position: fixed;  /* Fix the background image to the viewport */
-    border-radius: 10px;
-    background-repeat: no-repeat; 
-    color: var(--text-color); 
-    padding: 20px; 
-    height: 100vh;
-    /*animation: fadeOnly 1s ease-in-out;*/
-    overflow-y: auto;
-    background-attachment: fixed, fixed;
-}
-#Q\&A {
-    background-color: var(--background-color);
-    /*background-image: var(--question-img);*/
-    background-size: 100%, 100vh; 
-    background-position: fixed; 
-    /*background-attachment: fixed; Fix the background image to the viewport */
-    border-radius: 10px;
-    background-repeat: no-repeat; 
-    color: var(--text-color); 
-    padding: 20px; 
-    height: 100vh;
-    /*animation: fadeOnly 1s ease-in-out;*/
-    overflow-y: auto;
-}
 .tabcontent {
     background-color: var(--background-color);
     z-index: 2;
@@ -158,22 +128,6 @@ li {
     /*width: calc(100vw + 20%);*/
     overflow-y: auto;
     box-sizing: border-box;
-}
-.tab {
-    position: fixed;
-    height: 52.25px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    border: 2px solid var(--tab-border); /* Border color for the tab container */
-    align-items: center;
-    background-color: var(--tab-background); /* Background color for the tab container */
-    z-index: 1000;
-    width: 75%;
-    left: 50%; /* Move the tab container to the center */
-    transform: translateX(-50%);
-    top: 0;
-    border-radius: 7px;
 }
 
 .tab button {
@@ -202,6 +156,113 @@ li {
 .tabcontent.active {
     display: block;
 }
+.tabcontent .section {
+    height: 100vh;
+    margin-bottom: 30px; /* Add spacing between sections */
+    padding: 20px; /* Add padding inside each section */
+    background-color: var(--tab-background); /* Match the tab background */
+    border: 2px solid var(--tab-border); /* Add a border to separate sections */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+#Register:hover {
+    background-color: rgb(0, 200, 0); /* Darker green on hover */
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6); /* Glow effect */
+}
+
+#About\ Me {
+    background-color: var(--background-color);
+    /*background-image: var(--question-img); */
+    background-size: 100%, 100vh; 
+    background-position: fixed;  /* Fix the background image to the viewport */
+    border-radius: 10px;
+    background-repeat: no-repeat; 
+    color: var(--text-color); 
+    padding: 20px; 
+    height: 100vh;
+    /*animation: fadeOnly 1s ease-in-out;*/
+    overflow-y: auto;
+    background-attachment: fixed, fixed;
+}
+#Q\&A {
+    background-color: var(--background-color);
+    /*background-image: var(--question-img);*/
+    background-size: 100%, 100vh; 
+    background-position: fixed; 
+    /*background-attachment: fixed; Fix the background image to the viewport */
+    border-radius: 10px;
+    background-repeat: no-repeat; 
+    color: var(--text-color); 
+    padding: 20px; 
+    height: 100vh;
+    /*animation: fadeOnly 1s ease-in-out;*/
+    overflow-y: auto;
+}
+
+#proof-experience .experience-container {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: 1fr 3fr; /* 1/4 for image, 3/4 for text */
+    gap: 20px; /* Space between the image and text */
+    align-items: start; /* Vertically align content */
+    height: 100%; /* Ensure it takes full height of the section */
+}
+
+/* Left side: Image */
+#proof-experience .experience-image {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: flex-start; /* Center the image vertically */
+    height: 100%; /* Full height of the section */
+}
+
+#proof-experience .experience-image img {
+    max-width: 100%; /* Ensure the image fits within the container */
+    max-height: 100%; /* Prevent the image from overflowing */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensure the image scales properly */
+}
+
+/* Right side: Text */
+#proof-experience .experience-text {
+    padding: 20px; /* Add padding around the text */
+    background-color: var(--tab-background); /* Match the tab background */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+#proof-experience .experience-text h4 {
+    margin-top: 0; /* Remove default margin at the top */
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
+    text-align: center; /* Center-align the heading */
+}
+
+#proof-experience .experience-text p {
+    font-size: clamp(1rem, 2.5vw, 1.8rem); /* Responsive font size */
+    line-height: 1.6; /* Add spacing between lines */
+}
+/* Style for section headings */
+.tabcontent .section h4 {
+    margin-top: 0; /* Remove default margin at the top */
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
+    color: var(--text-color); /* Match text color */
+    text-align: center; /* Center-align section headings */
+}
+.tab {
+    position: fixed;
+    height: 52.25px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--tab-border); /* Border color for the tab container */
+    align-items: center;
+    background-color: var(--tab-background); /* Background color for the tab container */
+    z-index: 1000;
+    width: 75%;
+    left: 50%; /* Move the tab container to the center */
+    transform: translateX(-50%);
+    top: 0;
+    border-radius: 7px;
+}
+
 .grid-container {
     max-width: 600px;
     margin: 0 auto;
