@@ -97,13 +97,13 @@ li {
 #Register {
     position: absolute;
     font-family: 'Poppins', 'sans-serif';
-    font-weight: 700;
+    font-weight: 500;
     width: 250px; /* Set a fixed width for the button */
     height: 100px; /* Set a fixed height for the button */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center the button */
-    background-color: rgb(0, 255, 0); /* Green background */
+    background-color: rgb(0, 168, 0); /* Green background */
     box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6); /* Glow effect */
     color: white; /* White text */
     padding: 10px 20px; /* Add padding for the button */
@@ -164,7 +164,7 @@ li {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
 #Register:hover {
-    background-color: rgb(0, 200, 0); /* Darker green on hover */
+    background-color: rgb(0, 120, 0); /* Darker green on hover */
     box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6); /* Glow effect */
 }
 
@@ -211,7 +211,11 @@ li {
     display: flex;
     justify-content: center; /* Center the image horizontally */
     align-items: flex-start; /* Center the image vertically */
-    height: 100%; /* Full height of the section */
+    height: 100px; /* Full height of the section */
+    width: 100px;
+    border-radius: 10px;
+    outline:auto;
+    outline-width: 2px;
  /* Match the background color */
 }
 
