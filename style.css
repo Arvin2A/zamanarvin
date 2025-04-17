@@ -69,16 +69,19 @@ p {
     animation: fadeInUP 1s ease-in-out;
     font-size: 30px;
     text-align: center;
+    color: var(--text-color);
 }
 h1 {
     animation: fadeInUP 1s ease-in-out;
     text-align: center;
     margin-top: 50px;
+    color: var(--text-color);
 }
 h3 {
     animation: fadeInUP 1s ease-in-out;
     text-align: center;
     font-size: 50px;
+    color: var(--text-color);
 }
 ul {
     animation: fadeInUP 1s ease-in-out;
@@ -93,29 +96,13 @@ li {
     font-size: clamp(1rem, 2.5vw, 1.8rem);
     line-height: 1.6; /* Add spacing between list items */
     text-align: center;
+    color: var(--text-color);
 }
-#Register {
-    position: absolute;
-    font-family: 'Poppins', 'sans-serif';
-    font-weight: 700;
-    width: 250px; /* Set a fixed width for the button */
-    height: 100px; /* Set a fixed height for the button */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the button */
-    background-color: rgb(0, 255, 0); /* Green background */
-    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6); /* Glow effect */
-    color: white; /* White text */
-    padding: 10px 20px; /* Add padding for the button */
-    font-size: 48px; /* Adjust font size */
-    border: none; /* Remove default border */
-    border-radius: 10px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
+
 
 .tabcontent {
     background-color: var(--background-color);
+    color: var(--text-color);
     z-index: 2;
     display: none;
     padding: 6px 12px;
@@ -163,9 +150,32 @@ li {
     border-radius: 10px; /* Optional: rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
-#Register:hover {
-    background-color: rgb(0, 200, 0); /* Darker green on hover */
-    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6); /* Glow effect */
+
+#RegisterButton {
+    position: absolute;
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: 700;
+    width: 150px; /* Set a fixed width for the button */
+    height: 75px; /* Set a fixed height for the button */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the button */
+    border: var(--text-color) 2px solid; /* Border color */
+    background-color: var(--background-color); /* Match the background color */
+    color: var(--text-color); 
+    padding: 10px 20px; /* Add padding for the button */
+    font-size: 24px; /* Adjust font size */ /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+#Register.tabcontent {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+#RegisterButton:hover {
+    background-color: var(--text-color);
+    color: var(--background-color); /* Darker green on hover */; /* Glow effect */
 }
 
 #About\ Me {
