@@ -76,13 +76,17 @@ function saveModeToLocalStorage(darkModeEnabled) {
 
 // Load mode from localStorage
 function loadModeFromLocalStorage() {
-    const darkMode = localStorage.getItem("dark_mode") === "true";
-    if (darkMode) {
+    const darkMode = localStorage.getItem("dark_mode");
+    if (darkMode === null || darkMode === "true") {
+        // Enable dark mode by default if no preference is stored or if dark mode is enabled
         enableDarkMode();
     } else {
         disableDarkMode();
     }
 }
+
+// Call this on page load
+loadModeFromLocalStorage();
 
 // Call this on page load
 loadModeFromLocalStorage();

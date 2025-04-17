@@ -33,9 +33,9 @@ body.dark-mode, html.dark-mode {
     --question-img: url(Images/Tabcontent/questions_dark-mode.png); /* Light background color for questions in dark mode */
     --background-color: #000000; /* Dark background color */
     --text-color: #ffffff; /* Light text color */
-    --tab-background: #333333; /* Darker tab background */
-    --tab-border: #555555; /* Darker border for tabs */
-    --tab-active: #666666; /* Active tab color */
+    --tab-background: #000000; /* Darker tab background */
+    --tab-border: #ffffff; /* Darker border for tabs */
+    --tab-active: #000000; /* Active tab color */
     --payment-color: #000000;
     --payment-border: #ffffff;
 }
@@ -147,12 +147,18 @@ li {
     height: 100vh;
     margin-bottom: 30px; /* Add spacing between sections */
     padding: 20px; /* Add padding inside each section */
-    border-radius: 10px; /* Optional: rounded corners */
+    border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-}
 
+    /* Gradient border */
+    border: 5px solid transparent; /* Transparent border to allow gradient */
+    background-image: linear-gradient(var(--background-color), var(--background-color)), 
+                      linear-gradient(45deg, #d6a503, #ff5733); /* Gradient colors */
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
 #RegisterButton {
-    position: absolute;
+    position: relative;
     font-family: 'Poppins', 'sans-serif';
     font-weight: 700;
     width: 150px; /* Set a fixed width for the button */
@@ -160,14 +166,18 @@ li {
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center the button */
-    border: var(--text-color) 2px solid; /* Border color */
+    border: 5px solid transparent; /* Transparent border to allow gradient */
+    background-image: linear-gradient(var(--background-color), var(--background-color)), 
+                      linear-gradient(45deg, #d6a503, #ff5733); /* Gradient colors */
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     background-color: var(--background-color); /* Match the background color */
     color: var(--text-color); 
     padding: 10px 20px; /* Add padding for the button */
-    font-size: 24px; /* Adjust font size */ /* Remove default border */
+    font-size: 24px; /* Adjust font size */
     border-radius: 10px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
 #Register.tabcontent {
     background-color: var(--background-color);
@@ -218,18 +228,26 @@ li {
 
 /* Left side: Image */
 #proof-experience .experience-image {
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: flex-start; /* Center the image vertically */
-    height: 100%; /* Full height of the section */
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-rows: auto auto; /* Stack items vertically */
+    gap: 20px; /* Space between the image and text */
+    align-items: start; /* Vertically align content */
+    height: 100%;  /* Full height of the section */
  /* Match the background color */
 }
 
 #proof-experience .experience-image img {
-    max-width: 100%; /* Ensure the image fits within the container */
-    max-height: 100%; /* Prevent the image from overflowing */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    object-fit: cover; /* Ensure the image scales properly */
+    max-width: 100%; /* Ensure the image fits within the container's width */
+    max-height: 100%; /* Ensure the image fits within the container's height */
+    width: 95%; /* Scale the image to fit the width of the container */
+    height: 95%; /* Scale the image to fit the height of the container */
+    border-radius: 10px; 
+    border-width: 3px;
+    border-color: #d6a503;
+    border-style: solid; /* Ensure the border is visible */
+    object-fit: contain; /* Ensure the image scales properly without distortion */
+    display: block;
+    
 }
 
 /* Right side: Text */
