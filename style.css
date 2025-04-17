@@ -61,7 +61,7 @@ html, body {
     overflow-x: hidden; /* Prevent horizontal overflow on the entire page */
     background-color: var(--background-color);
     font-family: 'Poppins', 'sans-serif';
-    font-weight: 300;
+    font-weight: 100;
     color : var(--text-color); /* Default text color */
 }
 p {
@@ -80,8 +80,12 @@ h1 {
 h3 {
     animation: fadeInUP 1s ease-in-out;
     text-align: center;
+    font-weight: 300;
     font-size: 50px;
     color: var(--text-color);
+}
+h4 {
+    font-weight: 300;
 }
 ul {
     animation: fadeInUP 1s ease-in-out;
@@ -126,9 +130,8 @@ li {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Poppins', 'sans-serif';
-    border-radius: 15px;
 }
 
 .tab button:hover {
@@ -151,31 +154,25 @@ li {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 
     /* Gradient border */
-    border: 5px solid transparent; /* Transparent border to allow gradient */
-    background-image: linear-gradient(var(--background-color), var(--background-color)), 
-                      linear-gradient(45deg, #d6a503, #ff5733); /* Gradient colors */
+                      ; /* Third gradient */
     background-origin: border-box;
     background-clip: padding-box, border-box;
 }
 #RegisterButton {
     position: relative;
     font-family: 'Poppins', 'sans-serif';
-    font-weight: 700;
-    width: 150px; /* Set a fixed width for the button */
+    font-weight: 300;
+    width: 500px; /* Set a fixed width for the button */
     height: 75px; /* Set a fixed height for the button */
-    top: 50%; /* Center vertically */
+    top: 20%; /* Center vertically */
     left: 50%; /* Center horizontally */
+    border: 1px solid #5a5a5a; /* Border color */
     transform: translate(-50%, -50%); /* Center the button */
-    border: 5px solid transparent; /* Transparent border to allow gradient */
-    background-image: linear-gradient(var(--background-color), var(--background-color)), 
-                      linear-gradient(45deg, #d6a503, #ff5733); /* Gradient colors */
-    background-origin: border-box;
     background-clip: padding-box, border-box;
     background-color: var(--background-color); /* Match the background color */
     color: var(--text-color); 
     padding: 10px 20px; /* Add padding for the button */
     font-size: 24px; /* Adjust font size */
-    border-radius: 10px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
@@ -241,7 +238,6 @@ li {
     max-height: 100%; /* Ensure the image fits within the container's height */
     width: 95%; /* Scale the image to fit the width of the container */
     height: 95%; /* Scale the image to fit the height of the container */
-    border-radius: 10px; 
     border-width: 3px;
     border-color: #d6a503;
     border-style: solid; /* Ensure the border is visible */
@@ -274,19 +270,19 @@ li {
 }
 .tab {
     position: fixed;
-    height: 52.25px;
+    height: 50px;
     overflow: hidden;
     display: flex;
     justify-content: center;
-    border: 2px solid var(--tab-border); /* Border color for the tab container */
     align-items: center;
+    border: 1px solid #5a5a5a; /* Border color for the tab container */
     background-color: var(--tab-background); /* Background color for the tab container */
     z-index: 1000;
-    width: 75%;
+    width: 100%;
     left: 50%; /* Move the tab container to the center */
     transform: translateX(-50%);
     top: 0;
-    border-radius: 7px;
+
 }
 
 .grid-container {
