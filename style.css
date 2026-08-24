@@ -227,7 +227,7 @@ li {
 #proof-experience .experience-image {
     display: grid; /* Use CSS Grid for layout */
     grid-template-rows: auto auto; /* Stack items vertically */
-    gap: 20px; /* Space between the image and text */
+    gap: 10px; /* Space between the image and text */
     align-items: start; /* Vertically align content */
     height: 100%;  /* Full height of the section */
  /* Match the background color */
@@ -235,9 +235,9 @@ li {
 
 #proof-experience .experience-image img {
     max-width: 100%; /* Ensure the image fits within the container's width */
-    max-height: 100%; /* Ensure the image fits within the container's height */
-    width: 95%; /* Scale the image to fit the width of the container */
-    height: 95%; /* Scale the image to fit the height of the container */
+    max-height: 95%; /* Ensure the image fits within the container's height */
+    width: 85%; /* Scale the image to fit the width of the container */
+    height: 85%; /* Scale the image to fit the height of the container */
     border-width: 3px;
     border-color: #d6a503;
     border-style: solid; /* Ensure the border is visible */
