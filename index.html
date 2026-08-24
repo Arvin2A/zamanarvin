@@ -13,19 +13,16 @@
     <button id="darkModeToggle" class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
     <div class="tab">
         <button class="tablinks active" onclick="openTab(event, 'About Me')">Home</button>
-        <button class="tablinks" onclick="openTab(event, 'Q&A')">Q&A</button>
+        <button class="tablinks" onclick="openTab(event, 'Gallery')">Gallery</button>
         <button class="tablinks" onclick="openTab(event, 'Other')">Other</button>
-        <button class="tablinks" onclick="openTab(event, 'Register')">Register</button>
 
     </div>
     <div id="About Me" class="tabcontent">
         <div class="section" id="about-me">
             <h3>About Me</h3>
-            <p>Hi my name is Arvin and I want to teach <b>programming and math.</b>
-                I've done a lot of Python and Roblox LUAU programming, and I'm excellent at math.
-                Classes are also meant to be with other people, however, I am open to 1 to 1 classes if you want to.
-                I have always achieved math grades of 95% or higher, and I have a lot of experience with Python and Roblox LUAU programming.
-                The classes are designed for people who are bored of block-based coding and want a tougher challenge, which is a major problem for some people.
+            <p>Hello, my name is Arvin and I am a student of New Hyde Park Memorial High School, and i am experienced in programming, mathematics, and sciences.
+                I've a lot of Python, Luau, Java, and Javascript programming.
+                I have consistently achieved grades of 95% or higher, and I have a lot of experience with Python and Luau programming.
             </p>
         </div>
         <div class="section" id="proof-experience">
@@ -42,7 +39,7 @@
                     <h4>Experience</h4>
                     <p>I have learned python since <b>one and a half years ago</b>
                          and I have completed several certificarions from classes and courses. 
-                         I have done big projects aswell like a Fisch Macro with OpenCV, PySide6/PyQT5, json, sys,os, and math imports.
+                         I have done more complex projects aswell like a Fisch Macro with OpenCV, PySide6/PyQT5, json, sys,os, and math imports.
                          I have also done a lot of Roblox LUAU programming, I made games with the use of advanced scripting.
                          I have done mini-projects aswell with the use of Object Oriented programming, in both languages.
                          I have also done some projects with the use of GitHub, and I am familiar with the basics of Git.
@@ -51,26 +48,30 @@
             </div>
         </div>
     </div>
-    <div id="Q&A" class="tabcontent">
-        <div class="section">
-            <h3>Questions</h3>
-            <p>Q: Are there 1 to 1 classes?<br>
-                A: Yes<br>
-                Q: What is the age limit?<br>
-                A: The age limit is 10 to 15 years old.<br>
-                Q: What is the price?<br>
-                A: The price is $10 per hour, 15$ per hour for 1 on 1<br>
-                Q: What other languages will be taught soon?<br>
-                A: I plan on teaching Java later.
-            </p>
-        </div>
+    <div id="Gallery" class="tabcontent">
+        <section class="section" id="gallery" aria-labelledby="gallery-title">
+            <h3 id="gallery-title">Gallery</h3>
+            <div class="gallery-container">
+                <img src="Images/Icons/Python Classes and Inhertance.png" alt="Proof of Experience" />
+                <img src="Images/Icons/Python Functions Files and dictionaries.png" alt="Proof of Experience" />
+                <img src="Images/Icons/Python Basics.png" alt="Proof of Experience" />
+                <img src="Images/Icons/ArvinMaxCert-2026/JohnHopkinsUniversity-CTY-ExamCertificateReport-1.png" alt="Proof of Experience" />
+                <img src="Images/Icons/ArvinMaxCert-2026/Silicon Valley code Master.jpeg" alt="Proof of Experience" />
+                <img src="Images/Icons/ArvinMaxCert-2026/Presidential award 6th grade.jpeg" alt="Proof of Experience" />
+                <img src="Images/Icons/ArvinMaxCert-2026/2026-High Honors Junior Division-LongIsland Science Congress- STANYS.jpg" alt="Proof of Experience" />
+                <img src="Images/Icons/ArvinMaxCert-2026/2026-Hme Grown Award LISC_New Hyde Park Memorial.jpg" alt="Proof of Experience" />
+                <img src="Images/Icons/ArvinMaxCert-2026/7th Grade Academic Execellence award.jpg" alt="Proof of Experience" />
+            </div>
+        </section>
     </div>
     <div id="Other" class="tabcontent">
         <div class="section">
             <h3>Experience (Clarified)</h3>
             <ul>
                 <li>Python Experience: 2 years</li>
-                <li>Roblox Developing experience: 4 years</li>
+                <li>Luau Developing (discontinued) experience: 6 years</li>
+                <li>Java Experience: 1 year</li>
+                <li>JavaScript Experience: 3 years</li>
                 <li>Python Packages to be taught: PyQT, OpenCV, Tkinter, (Built-In Modules: os, time, json, math, sys)</li>
                 <li>Basic Git knowledge</li>
                 <li>Miscellaneous: SikuliX (Image recognition for Python [In reality its Jython]), PyAutoGUI (Automating tasks with
@@ -80,13 +81,6 @@
         </div>
     </div>
 
-    <div id="Register" class="tabcontent">
-        <div class="section">
-            <h3>Options</h3>
-            <button id="RegisterButton" onclick="window.open('https://forms.gle/5S9MA3t8QcvKECLJ7', '_blank')">Register</button>
-    
-        </div>
-    </div>    
     <script src="script.js"></script>
 </body>
 

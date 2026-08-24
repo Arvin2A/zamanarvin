@@ -15,7 +15,7 @@ function openTab(evt, tabName) {
     /*if (activeTab) {
         const computedStyle = window.getComputedStyle(activeTab);
         if (computedStyle.animationName !== "none") {
-            activeTab.style.animation = "fadeInUP 1s ease-in-out"; // Apply animation
+            activeTab.style.animation = "fadeInUP 1s ease-in-out"; 
         }
     }*/
 
@@ -24,29 +24,27 @@ function openTab(evt, tabName) {
     }
 }
 function handleTabNavigation(event) {
-    const tabs = document.getElementsByClassName("tablinks"); // Get all tab buttons
-    const activeTab = document.querySelector(".tablinks.active"); // Find the currently active tab
-    let currentIndex = Array.from(tabs).indexOf(activeTab); // Get the index of the active tab
+    const tabs = document.getElementsByClassName("tablinks"); 
+    const activeTab = document.querySelector(".tablinks.active"); 
+    let currentIndex = Array.from(tabs).indexOf(activeTab); 
 
     if (event.key === "ArrowRight") {
-        // Move to the next tab
         const nextIndex = (currentIndex + 1) % tabs.length; // Wrap around to the first tab
-        tabs[nextIndex].click(); // Simulate a click on the next tab
+        tabs[nextIndex].click(); 
     } else if (event.key === "ArrowLeft") {
-        // Move to the previous tab
-        const prevIndex = (currentIndex - 1 + tabs.length) % tabs.length; // Wrap around to the last tab
-        tabs[prevIndex].click(); // Simulate a click on the previous tab
+        const prevIndex = (currentIndex - 1 + tabs.length) % tabs.length; 
+        tabs[prevIndex].click();
     }
 }
 document.addEventListener("keydown", handleTabNavigation);
 function enableDarkMode() {
     document.documentElement.classList.add("dark-mode");
-    document.body.classList.add("dark-mode"); // Ensure body also has the dark mode class
+    document.body.classList.add("dark-mode"); 
     const darkModeToggle = document.getElementById("darkModeToggle");
-    document.documentElement.style.backgroundColor = "#000000"; // Dark background
+    document.documentElement.style.backgroundColor = "#000000"; 
     document.body.style.backgroundColor = "#000000";
     if (darkModeToggle) {
-        darkModeToggle.textContent = "☀️"; // Change to sun icon for light mode
+        darkModeToggle.textContent = "☀️"; 
     }
 }
 
@@ -78,27 +76,22 @@ function saveModeToLocalStorage(darkModeEnabled) {
 function loadModeFromLocalStorage() {
     const darkMode = localStorage.getItem("dark_mode");
     if (darkMode === null || darkMode === "true") {
-        // Enable dark mode by default if no preference is stored or if dark mode is enabled
         enableDarkMode();
     } else {
         disableDarkMode();
     }
 }
 
-// Call this on page load
 loadModeFromLocalStorage();
 
-// Call this on page load
 loadModeFromLocalStorage();
 
-//----SWIPE GESTURE---
 function handleSwipeRight() {
-    // Handle swipe right action
     var tabs = document.getElementsByClassName("tablinks");
     var activeTab = document.querySelector(".tablinks.active");
     var currentIndex = Array.from(tabs).indexOf(activeTab);
-    var nextIndex = (currentIndex + 1) % tabs.length; // Wrap around to the first tab
-    tabs[nextIndex].click(); // Simulate a click on the next tab
+    var nextIndex = (currentIndex + 1) % tabs.length; 
+    tabs[nextIndex].click(); 
 }
 function handleSwipeLeft() {
     // Handle swipe left action
@@ -106,7 +99,7 @@ function handleSwipeLeft() {
     var activeTab = document.querySelector(".tablinks.active");
     var currentIndex = Array.from(tabs).indexOf(activeTab);
     var prevIndex = (currentIndex - 1 + tabs.length) % tabs.length; // Wrap around to the last tab
-    tabs[prevIndex].click(); // Simulate a click on the previous tab
+    tabs[prevIndex].click(); 
 }
 let startX, startY;
 
@@ -123,15 +116,13 @@ document.addEventListener('touchend', (e) => {
   const deltaX = endX - startX;
   const deltaY = endY - startY;
   const swipeThreshold = 50;
-  // Check if it's a swipe
   if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
-    // Horizontal swipe
     if (deltaX > 0) {
       console.log('Swipe Right');
-      handleSwipeRight(); // Call a function to handle right swipe
+      handleSwipeRight(); 
     } else {
       console.log('Swipe Left');
-      handleSwipeLeft(); // Call a function to handle left swipe
+      handleSwipeLeft(); 
     }
   }
 });
