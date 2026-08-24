@@ -75,17 +75,24 @@ h1 {
     animation: fadeInUP 1s ease-in-out;
     text-align: center;
     margin-top: 50px;
-    color: var(--text-color);
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    line-height: 1.1;
+    font-weight: 700;
+    color: #00b0b3;
 }
 h3 {
     animation: fadeInUP 1s ease-in-out;
     text-align: center;
     font-weight: 300;
     font-size: 50px;
-    color: var(--text-color);
+    color: #00b0b3;
 }
 h4 {
+    animation: fadeInUP 1s ease-in-out;
+    text-align: center;
     font-weight: 300;
+    font-size: 50px;
+    color: #00b0b3;
 }
 ul {
     animation: fadeInUP 1s ease-in-out;
@@ -187,17 +194,20 @@ li {
 
 #About\ Me {
     background-color: var(--background-color);
-    /*background-image: var(--question-img); */
-    background-size: 100%, 100vh; 
-    background-position: fixed;  /* Fix the background image to the viewport */
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('Images/Icons/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 10px;
-    background-repeat: no-repeat; 
     color: var(--text-color); 
     padding: 20px; 
     height: 100vh;
-    /*animation: fadeOnly 1s ease-in-out;*/
     overflow-y: auto;
-    background-attachment: fixed, fixed;
+    background-attachment: fixed;
+}
+
+body.dark-mode #About\ Me {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Images/Icons/background1.png');
 }
 #Q\&A {
     background-color: var(--background-color);
@@ -215,51 +225,46 @@ li {
     overflow-y: auto;
 }
 
-#proof-experience .experience-container {
-    display: grid; /* Use CSS Grid for layout */
-    grid-template-columns: 1fr 3fr; /* 1/4 for image, 3/4 for text */
-    gap: 20px; /* Space between the image and text */
-    align-items: start; /* Vertically align content */
-    height: 100%; /* Ensure it takes full height of the section */
+#proof-experience {
+    width: 100%;
 }
 
-/* Left side: Image */
-#proof-experience .experience-image {
-    display: grid; /* Use CSS Grid for layout */
-    grid-template-rows: auto auto; /* Stack items vertically */
-    gap: 10px; /* Space between the image and text */
-    align-items: start; /* Vertically align content */
-    height: 100%;  /* Full height of the section */
- /* Match the background color */
-}
-
-#proof-experience .experience-image img {
-    max-width: 100%; /* Ensure the image fits within the container's width */
-    max-height: 95%; /* Ensure the image fits within the container's height */
-    width: 85%; /* Scale the image to fit the width of the container */
-    height: 85%; /* Scale the image to fit the height of the container */
-    border-width: 3px;
-    border-color: #d6a503;
-    border-style: solid; /* Ensure the border is visible */
-    object-fit: contain; /* Ensure the image scales properly without distortion */
-    display: block;
-    
-}
-
-/* Right side: Text */
 #proof-experience .experience-text {
-    padding: 20px; /* Add padding around the text *//* Match the tab background */ /* Optional: Rounded corners */
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #proof-experience .experience-text h4 {
     margin-top: 0; /* Remove default margin at the top */
-    font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
+    font-size: clamp(2.8rem, 2vw, 5.8rem); /* Responsive font size, reduced by half */
     text-align: center; /* Center-align the heading */
+    color: hsl(181, 100%, 35%);
 }
 
 #proof-experience .experience-text p {
-    font-size: clamp(1rem, 2.5vw, 1.8rem); /* Responsive font size */
+    font-size: clamp(1rem, 1.25vw, 1.8rem); /* Responsive font size, reduced by half */
     line-height: 1.6; /* Add spacing between lines */
+    max-width: 100%;
+    text-align: left;
+}
+
+.about-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 20px auto 0;
+    max-width: 1000px;
+}
+
+.about-gallery img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border: 3px solid #d6a503;
+    box-sizing: border-box;
+    display: block;
 }
 .gallery-container {
     display: grid;
@@ -289,7 +294,7 @@ li {
 .tabcontent .section h4 {
     margin-top: 0; /* Remove default margin at the top */
     font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
-    color: var(--text-color); /* Match text color */
+    color: hsl(181, 100%, 35%); /* Match heading color */
     text-align: center; /* Center-align section headings */
 }
 .tab {
