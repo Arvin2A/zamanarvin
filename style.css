@@ -78,14 +78,14 @@ h1 {
     font-size: clamp(2.8rem, 7vw, 5.5rem);
     line-height: 1.1;
     font-weight: 700;
-    color: #00b0b3;
+    color: #0389d6;
 }
 h3 {
     animation: fadeInUP 1s ease-in-out;
     text-align: center;
     font-weight: 300;
     font-size: 50px;
-    color: #00b0b3;
+    color: #0389d6;
 }
 h4 {
     animation: fadeInUP 1s ease-in-out;
@@ -229,6 +229,25 @@ body.dark-mode #About\ Me {
     width: 100%;
 }
 
+#proof-experience .experience-intro {
+    display: grid;
+    grid-template-columns: minmax(150px, 286px) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+#proof-experience .experience-logo {
+    width: 100%;
+    max-width: 286px;
+    margin-top: 48px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border: 3px solid #0389d6;
+    border-radius: 18px;
+    box-sizing: border-box;
+    display: block;
+}
+
 #proof-experience .experience-text {
     width: 100%;
     max-width: 100%;
@@ -240,7 +259,7 @@ body.dark-mode #About\ Me {
     margin-top: 0; /* Remove default margin at the top */
     font-size: clamp(2.8rem, 2vw, 5.8rem); /* Responsive font size, reduced by half */
     text-align: center; /* Center-align the heading */
-    color: hsl(181, 100%, 35%);
+    color: #0389d6;
 }
 
 #proof-experience .experience-text p {
@@ -248,6 +267,22 @@ body.dark-mode #About\ Me {
     line-height: 1.6; /* Add spacing between lines */
     max-width: 100%;
     text-align: left;
+}
+
+@media (max-width: 700px) {
+    #proof-experience .experience-intro {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    #proof-experience .experience-logo {
+        width: min(180px, 60vw);
+    }
+
+    #proof-experience .experience-text {
+        width: 100%;
+        padding: 0;
+    }
 }
 
 .about-gallery {
@@ -262,7 +297,7 @@ body.dark-mode #About\ Me {
     width: 100%;
     height: 260px;
     object-fit: cover;
-    border: 3px solid #d6a503;
+    border: 3px solid #0389d6;
     box-sizing: border-box;
     display: block;
 }
@@ -283,7 +318,7 @@ body.dark-mode #About\ Me {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border: 3px solid #d6a503;
+    border: 3px solid #0389d6;
     box-sizing: border-box;
     display: block;
 }
@@ -294,7 +329,7 @@ body.dark-mode #About\ Me {
 .tabcontent .section h4 {
     margin-top: 0; /* Remove default margin at the top */
     font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
-    color: hsl(181, 100%, 35%); /* Match heading color */
+    color: #0389d6; /* Match heading color */
     text-align: center; /* Center-align section headings */
 }
 .tab {
@@ -342,4 +377,4 @@ body.dark-mode #About\ Me {
 .payment-button:hover {
     background-color: var(--tab-active); 
     color: var(--text-color); 
-*/
+}*/
