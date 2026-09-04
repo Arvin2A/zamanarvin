@@ -58,16 +58,21 @@ body.dark-mode, html.dark-mode {
     transition: background-color 0.3s, color 0.3s;
 }
 html, body {
+    margin: 0;
+    min-width: 0;
     overflow-x: hidden; /* Prevent horizontal overflow on the entire page */
     background-color: var(--background-color);
     font-family: 'Poppins', 'sans-serif';
     font-weight: 100;
     color : var(--text-color); /* Default text color */
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 p {
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 1.4vw, 1.35rem);
+    line-height: 1.7;
     animation: fadeInUP 1s ease-in-out;
-    font-size: 30px;
     text-align: center;
     color: var(--text-color);
 }
@@ -84,14 +89,14 @@ h3 {
     animation: fadeInUP 1s ease-in-out;
     text-align: center;
     font-weight: 300;
-    font-size: 50px;
+    font-size: clamp(2rem, 5vw, 3.125rem);
     color: #0389d6;
 }
 h4 {
     animation: fadeInUP 1s ease-in-out;
     text-align: center;
     font-weight: 300;
-    font-size: 50px;
+    font-size: clamp(1.75rem, 4vw, 3.125rem);
     color: #00b0b3;
 }
 ul {
@@ -119,8 +124,7 @@ li {
     padding: 6px 12px;
     /*top: 50px;*/
     width: 100%;
-    /*height: calc(100% - 50px);*/
-    height: 100vh;
+    min-height: 100vh;
     border-top: none;
     margin-top: 50px; /* Adjust this value to match the height of your tab buttons */
     /*width: calc(100vw + 20%);*/
@@ -154,9 +158,9 @@ li {
     display: block;
 }
 .tabcontent .section {
-    height: 100vh;
+    min-height: 0;
     margin-bottom: 30px; /* Add spacing between sections */
-    padding: 20px; /* Add padding inside each section */
+    padding: clamp(16px, 3vw, 32px); /* Add padding inside each section */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 
@@ -200,10 +204,10 @@ li {
     background-repeat: no-repeat;
     border-radius: 10px;
     color: var(--text-color); 
-    padding: 20px; 
-    height: 100vh;
+    padding: clamp(16px, 3vw, 32px);
+    min-height: 100%;
     overflow-y: auto;
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 
 body.dark-mode #About\ Me {
@@ -219,7 +223,7 @@ body.dark-mode #About\ Me {
     background-repeat: no-repeat; 
     color: var(--text-color); 
     padding: 20px; 
-    height: 100vh;
+    min-height: 100%;
     width: 100%;
     /*animation: fadeOnly 1s ease-in-out;*/
     overflow-y: auto;
@@ -295,7 +299,8 @@ body.dark-mode #About\ Me {
 
 .about-gallery img {
     width: 100%;
-    height: 260px;
+    aspect-ratio: 4 / 3;
+    height: auto;
     object-fit: cover;
     border: 3px solid #0389d6;
     box-sizing: border-box;
@@ -316,14 +321,15 @@ body.dark-mode #About\ Me {
 
 .gallery-container img {
     width: 100%;
-    height: 220px;
+    aspect-ratio: 4 / 3;
+    height: auto;
     object-fit: cover;
     border: 3px solid #0389d6;
     box-sizing: border-box;
     display: block;
 }
 #Gallery .section {
-    height: 200vh;
+    min-height: 0;
 }
 /* Style for section headings */
 .tabcontent .section h4 {
@@ -343,10 +349,90 @@ body.dark-mode #About\ Me {
     background-color: var(--tab-background); /* Background color for the tab container */
     z-index: 1000;
     width: 100%;
+    padding: 0 8px;
     left: 50%; /* Move the tab container to the center */
     transform: translateX(-50%);
     top: 0;
 
+}
+
+@media (max-width: 700px) {
+    .dark-mode-toggle {
+        bottom: max(12px, env(safe-area-inset-bottom));
+        right: max(12px, env(safe-area-inset-right));
+        width: 44px;
+        height: 44px;
+    }
+
+    .tab {
+        height: auto;
+        min-height: 50px;
+        justify-content: stretch;
+        padding: 0;
+    }
+
+    .tab button {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 13px 8px;
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+        white-space: nowrap;
+    }
+
+    .tabcontent {
+        margin-top: 58px;
+        padding: 8px;
+    }
+
+    .tabcontent .section {
+        margin-bottom: 16px;
+        padding: 16px 12px;
+    }
+
+    p,
+    #proof-experience .experience-text p {
+        font-size: 1rem;
+        line-height: 1.65;
+        text-align: left;
+    }
+
+    h3 {
+        margin: 12px 0 20px;
+    }
+
+    ul {
+        padding-left: 20px;
+        margin: 16px auto;
+    }
+
+    li {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .about-gallery,
+    .gallery-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 12px;
+    }
+
+    .gallery-container {
+        min-height: 0;
+    }
+
+    .about-gallery img,
+    .gallery-container img {
+        aspect-ratio: 4 / 3;
+        height: auto;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .about-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 .grid-container {
